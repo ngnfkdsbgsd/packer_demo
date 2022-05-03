@@ -1,0 +1,8 @@
+out/**
+packer_cache/**
+stuff/**
+images/**
+provision/windows*
+provision/Win8*
+sample_run.*
+packer.exe
