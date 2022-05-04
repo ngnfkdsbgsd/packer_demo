@@ -2,7 +2,7 @@
     $systemInformation = New-Object -ComObject 'Microsoft.Update.SystemInfo'
     if ($systemInformation.RebootRequired) {
         Write-Output "[WU.ps1] Need to reboot, scheduling a restart"
-        Start-Process "shutdown.exe" -ArgumentList "/r /t 10"
+        Start-Process shutdown.exe -ArgumentList "/r /t 10"
         [System.Environment]::Exit(-1)
     }
 #endregion
@@ -136,7 +136,7 @@ foreach($update in $searchResult.Updates) {
         else {
             Write-Output "[WU.ps1] Updates were installed, reboot is needed."
             Wait-Condition -condition $installerCondition -timeout 300
-            Start-Process "shutdown.exe" -ArgumentList "/r /t 30"
+            Start-Process shutdown.exe -ArgumentList "/r /t 30"
             Write-Output "[WU.ps1] Rebooting."
             [System.Environment]::Exit(-1)
         }
