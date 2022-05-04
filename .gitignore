@@ -2,7 +2,7 @@ out/**
 packer_cache/**
 stuff/**
 images/**
-provision/windows*
+provision/windows.iso
 provision/Win8*
 sample_run.*
 packer.exe
